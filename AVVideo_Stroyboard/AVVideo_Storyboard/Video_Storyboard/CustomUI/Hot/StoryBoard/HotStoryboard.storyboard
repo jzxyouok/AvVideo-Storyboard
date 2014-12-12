@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k2c-El-JZi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wo6-h6-rfR">
+            <objects>
+                <tabBarController id="k2c-El-JZi" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="bA7-zD-3Ra">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TDN-ke-qIb" kind="relationship" relationship="viewControllers" id="rki-ug-2gi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yby-Qf-jmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1129" y="-529"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="DvQ-tw-Ukt">
+            <objects>
+                <navigationController storyboardIdentifier="Launch" id="TDN-ke-qIb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="miD-uS-ud2"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i15-3P-CUS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cwi-1N-eAw" kind="relationship" relationship="rootViewController" id="Ucz-VW-ZaP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11H-ML-xEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1446" y="235"/>
+        </scene>
+        <!--Hot-->
+        <scene sceneID="vmG-Zb-iAK">
+            <objects>
+                <viewController id="cwi-1N-eAw" customClass="HotViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4bu-ux-I2v"/>
+                        <viewControllerLayoutGuide type="bottom" id="92b-bj-MEU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="myW-5q-zkt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hot" id="9T1-7a-SKb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STf-HP-BOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-910" y="230"/>
+        </scene>
+    </scenes>
+</document>

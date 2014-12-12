@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mob-tM-0zA">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="PXh-Rj-hVH">
+            <objects>
+                <navigationController storyboardIdentifier="Launch" id="mob-tM-0zA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Fcs-of-j8H"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2sk-CC-8rP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WL2-GX-kBY" kind="relationship" relationship="rootViewController" id="Xoj-PQ-95u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZfJ-XW-re5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2123" y="419"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="2LX-8i-45Q">
+            <objects>
+                <viewController id="WL2-GX-kBY" customClass="VideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g5i-07-E3w"/>
+                        <viewControllerLayoutGuide type="bottom" id="HLk-Ru-yoz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hLd-RT-tNU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szv-fc-h1x" customClass="VideoRecordProgress">
+                                <rect key="frame" x="0.0" y="64" width="320" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="jD3-s6-UJ1"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csY-2W-zXA">
+                                <rect key="frame" x="121" y="482" width="78" height="78"/>
+                                <state key="normal" image="MainView_RecordBut.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="MainView_RecordBut_.png"/>
+                                <connections>
+                                    <action selector="recordButCancelCall" destination="WL2-GX-kBY" eventType="touchDown" id="TKS-OB-xZK"/>
+                                    <action selector="recordButPressedCall" destination="WL2-GX-kBY" eventType="touchUpInside" id="7X7-94-zKH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7a-mr-qcf">
+                                <rect key="frame" x="251" y="494" width="53" height="53"/>
+                                <state key="normal" image="MainView_SaveBut.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButCall:" destination="WL2-GX-kBY" eventType="touchUpInside" id="180-RL-JIR"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lnz-zN-pX2" customClass="VideoPreview">
+                                <rect key="frame" x="0.0" y="79" width="320" height="387"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lnz-zN-pX2" firstAttribute="leading" secondItem="hLd-RT-tNU" secondAttribute="leading" id="6Ik-gM-sno"/>
+                            <constraint firstItem="P7a-mr-qcf" firstAttribute="leading" secondItem="csY-2W-zXA" secondAttribute="trailing" constant="52" id="7Rb-XG-TFE"/>
+                            <constraint firstItem="Lnz-zN-pX2" firstAttribute="top" secondItem="Szv-fc-h1x" secondAttribute="bottom" id="7bX-FI-HTn"/>
+                            <constraint firstAttribute="trailing" secondItem="Lnz-zN-pX2" secondAttribute="trailing" id="Bsr-aT-Ztz"/>
+                            <constraint firstItem="Szv-fc-h1x" firstAttribute="leading" secondItem="hLd-RT-tNU" secondAttribute="leading" id="Igd-oX-vOS"/>
+                            <constraint firstItem="Szv-fc-h1x" firstAttribute="top" secondItem="g5i-07-E3w" secondAttribute="bottom" id="K5R-re-5mk"/>
+                            <constraint firstItem="HLk-Ru-yoz" firstAttribute="top" secondItem="P7a-mr-qcf" secondAttribute="bottom" constant="21" id="NIO-Jn-UI3"/>
+                            <constraint firstItem="csY-2W-zXA" firstAttribute="top" secondItem="Lnz-zN-pX2" secondAttribute="bottom" constant="16" id="Qgl-Xv-sPj"/>
+                            <constraint firstItem="HLk-Ru-yoz" firstAttribute="top" secondItem="csY-2W-zXA" secondAttribute="bottom" constant="8" id="R2U-al-qSV"/>
+                            <constraint firstItem="Szv-fc-h1x" firstAttribute="leading" secondItem="hLd-RT-tNU" secondAttribute="leading" id="YkG-Vg-66B"/>
+                            <constraint firstItem="Szv-fc-h1x" firstAttribute="top" secondItem="g5i-07-E3w" secondAttribute="bottom" id="ZDt-Iq-NNq"/>
+                            <constraint firstAttribute="centerX" secondItem="csY-2W-zXA" secondAttribute="centerX" id="aOW-gh-ngT"/>
+                            <constraint firstAttribute="trailing" secondItem="Szv-fc-h1x" secondAttribute="trailing" id="dZu-pH-bmj"/>
+                            <constraint firstAttribute="trailing" secondItem="Szv-fc-h1x" secondAttribute="trailing" id="fYf-F3-gvj"/>
+                            <constraint firstAttribute="trailing" secondItem="P7a-mr-qcf" secondAttribute="trailing" constant="16" id="iwV-Ov-wIs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="K5R-re-5mk"/>
+                                <exclude reference="YkG-Vg-66B"/>
+                                <exclude reference="fYf-F3-gvj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="kID-fb-XBd">
+                        <barButtonItem key="leftBarButtonItem" id="OS3-TH-lRm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g54-Pc-aEa">
+                                <rect key="frame" x="16" y="8" width="28" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="General_ConcelBut.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leftNavButCall:" destination="WL2-GX-kBY" eventType="touchUpInside" id="IcW-J2-FNh"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveBut" destination="P7a-mr-qcf" id="h4Q-xi-gle"/>
+                        <outlet property="videoPreview" destination="Lnz-zN-pX2" id="BMb-dZ-yB4"/>
+                        <outlet property="videoProgress" destination="Szv-fc-h1x" id="746-49-a3e"/>
+                        <segue destination="fNU-yT-gvi" kind="show" identifier="ShowVideoProcess" id="aFg-Sn-Dhw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDZ-fD-SUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1659" y="419"/>
+        </scene>
+        <!--视频加工-->
+        <scene sceneID="cDh-Im-dij">
+            <objects>
+                <viewController id="fNU-yT-gvi" customClass="VideoProcessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Yj-ej-XVa"/>
+                        <viewControllerLayoutGuide type="bottom" id="q6h-Bg-WGN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t6F-41-lV9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giw-ab-GCB" customClass="VideoPlayer">
+                                <rect key="frame" x="0.0" y="64" width="320" height="334"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-2a-lvf" customClass="VideoProcessOperationView">
+                                <rect key="frame" x="0.0" y="426" width="320" height="80"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFE-ex-H79" customClass="CustomToolBar">
+                                <rect key="frame" x="0.0" y="506" width="320" height="62"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fNU-yT-gvi" id="hcF-fN-fmb"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WFE-ex-H79" secondAttribute="trailing" id="3Cb-ye-hLV"/>
+                            <constraint firstItem="q6h-Bg-WGN" firstAttribute="top" secondItem="giw-ab-GCB" secondAttribute="bottom" constant="170" id="AF3-Sm-PpF"/>
+                            <constraint firstItem="WFE-ex-H79" firstAttribute="leading" secondItem="t6F-41-lV9" secondAttribute="leading" id="GAZ-LS-bRQ"/>
+                            <constraint firstItem="giw-ab-GCB" firstAttribute="top" secondItem="2Yj-ej-XVa" secondAttribute="bottom" id="LTT-sd-6ek"/>
+                            <constraint firstItem="hhg-2a-lvf" firstAttribute="leading" secondItem="t6F-41-lV9" secondAttribute="leading" id="LsC-a9-nFs"/>
+                            <constraint firstItem="WFE-ex-H79" firstAttribute="leading" secondItem="t6F-41-lV9" secondAttribute="leading" id="YJn-on-Hg5"/>
+                            <constraint firstItem="WFE-ex-H79" firstAttribute="top" secondItem="hhg-2a-lvf" secondAttribute="bottom" id="bvQ-Br-Lvw"/>
+                            <constraint firstItem="giw-ab-GCB" firstAttribute="leading" secondItem="t6F-41-lV9" secondAttribute="leading" id="ghi-hj-NF1"/>
+                            <constraint firstItem="q6h-Bg-WGN" firstAttribute="top" secondItem="hhg-2a-lvf" secondAttribute="bottom" constant="62" id="hL5-y9-qdC"/>
+                            <constraint firstItem="q6h-Bg-WGN" firstAttribute="top" secondItem="WFE-ex-H79" secondAttribute="bottom" constant="-5" id="ha3-dZ-ypP"/>
+                            <constraint firstAttribute="trailing" secondItem="WFE-ex-H79" secondAttribute="trailing" id="iQh-Y8-dnO"/>
+                            <constraint firstAttribute="trailing" secondItem="giw-ab-GCB" secondAttribute="trailing" id="ijk-um-2tA"/>
+                            <constraint firstItem="WFE-ex-H79" firstAttribute="top" secondItem="hhg-2a-lvf" secondAttribute="bottom" id="ql1-Fr-rb0"/>
+                            <constraint firstAttribute="trailing" secondItem="hhg-2a-lvf" secondAttribute="trailing" id="rce-dU-Sj4"/>
+                            <constraint firstItem="hhg-2a-lvf" firstAttribute="top" secondItem="giw-ab-GCB" secondAttribute="bottom" constant="28" id="tc3-sm-maK"/>
+                            <constraint firstItem="q6h-Bg-WGN" firstAttribute="top" secondItem="WFE-ex-H79" secondAttribute="bottom" id="uVH-aL-yes"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Cb-ye-hLV"/>
+                                <exclude reference="GAZ-LS-bRQ"/>
+                                <exclude reference="ql1-Fr-rb0"/>
+                                <exclude reference="ha3-dZ-ypP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="视频加工" id="BFg-IZ-Rvd">
+                        <barButtonItem key="leftBarButtonItem" id="sfJ-xK-afz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aa9-gd-LhX">
+                                <rect key="frame" x="16" y="7" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leftNavButCall:" destination="fNU-yT-gvi" eventType="touchUpInside" id="kej-Ix-8fJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="a3w-QW-JoW">
+                            <view key="customView" contentMode="scaleToFill" id="LnB-6A-02q">
+                                <rect key="frame" x="233" y="5" width="101" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbs-tR-Qb0">
+                                        <rect key="frame" x="55" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="发布">
+                                            <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="publishButCall:" destination="fNU-yT-gvi" eventType="touchUpInside" id="Dwi-Tu-DTh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhP-6I-O8m">
+                                        <rect key="frame" x="14" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="还原">
+                                            <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="renewButCall:" destination="fNU-yT-gvi" eventType="touchUpInside" id="xdE-Xk-bCt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="operationView" destination="hhg-2a-lvf" id="uSm-jY-ePP"/>
+                        <outlet property="toolBar" destination="WFE-ex-H79" id="qJN-rk-mPy"/>
+                        <outlet property="videoPlayer" destination="giw-ab-GCB" id="c4r-cM-WaA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGk-DI-PXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1180" y="419"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="General_ConcelBut.png" width="27" height="27"/>
+        <image name="MainView_RecordBut.png" width="78" height="78"/>
+        <image name="MainView_RecordBut_.png" width="78" height="78"/>
+        <image name="MainView_SaveBut.png" width="53" height="53"/>
+    </resources>
+</document>
